@@ -15,7 +15,7 @@ entry.grid(row=0, column=0, columnspan=4)
 
 
 buttons = [
-    ['','','','√',]
+    ['arcsin','arccos','arctan','√',]
     ['Sin','Cos','Tan','^'],
     ['7', '8', '9', '/'],
     ['4', '5', '6', '*'],
