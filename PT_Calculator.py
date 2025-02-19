@@ -9,8 +9,84 @@ window = tk.Tk ()  #TK () method to initialise a main window
 window.title ("Calculator")  # set title
 window.geometry ("800x600")  #set calculator window size
 
+<<<<<<< Updated upstream
 entry = tk.Entry(window, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
 entry.grid(row=0, column=0, columnspan=4)
+=======
+number_input = 0
+
+def close_window():
+    
+    window.destroy()
+
+def delete():
+   global empty
+   empty = 0
+   number_input.set(empty)
+   
+def clear():
+    
+    
+   
+def addition(): 
+
+    
+    
+    return
+    
+
+def subtraction():
+    
+    return
+
+def multiply():
+    
+    return
+
+def divide():
+    
+    return
+
+#_____________________________________
+
+def square(): 
+    
+    return
+
+def sqrroot():
+    
+    return 
+
+#_____________________________________
+
+def sine():
+    
+    return
+
+def cosine():
+    
+    return
+
+def tangent():
+    
+    return
+
+#_____________________________________
+
+def arcsine():
+    
+    return
+
+def arccos():
+    
+    return
+
+def arctan():
+    
+    return
+
+
+>>>>>>> Stashed changes
 
 
 buttons = [
