@@ -23,7 +23,13 @@ buttons = [
     ['C', '0', '=', '+']
 ]
 
+for i, row in enumerate(buttons):
+    for j, button_text in enumerate(row):
+        button = tk.Button(window, text=button_text, font=("Arial", 18), height=4, width=10,
+                           command=lambda button_text=button_text: on_click(button_text))
+        button.grid(row=i+1, column=j, padx=5, pady=5)
 number_input = 0
+
 
 def close_window():
     
