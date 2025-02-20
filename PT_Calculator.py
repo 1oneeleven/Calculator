@@ -14,7 +14,7 @@ class GUICalculator:
         
         self.window=window
         self.window.title ("Calculator")  # set title
-        self.window.geometry ("1000x800")  #set calculator window size
+        self.window.geometry ("800x1000")  #set calculator window size
     
     
         self.entry = tk.Entry(self.window, textvariable=self.number_input, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
@@ -35,7 +35,7 @@ class GUICalculator:
             for j, button_text in enumerate(row):
                 self.button = tk.Button(self.window, text=button_text, font=("Arial", 18), height=4, width=10, command=lambda button_text=button_text: self.on_click(button_text)) 
                                 
-                self.button.grid(row=i+1, column=j, padx=5, pady=5)
+                self.button.grid(row=i+1, column=j, padx=5, pady=4)
     
         
     
@@ -56,23 +56,22 @@ class GUICalculator:
                 self.expression+='math.sin'
                 
             elif button_text == 'cos':
-                self.expression+=math.cos()
+                self.expression+= 'math.cos'
              
             elif button_text == 'tan':
-                self.expression+=math.tan()
+                self.expression+= 'math.tan'
     
             elif button_text == 'arcsin': 
-                self.expression+=math.arcsin()
+                self.expression+= 'math.arcsin'
                 
             elif button_text == 'arccos':
-                self.expression+=math.arccos()
+                self.expression+= 'math.arccos'
                 
             elif button_text == 'arctan':
-                self.expression+=math.arctan()
+                self.expression+= 'math.arctan'
            
             elif button_text == '√':
-                self.expression+=math.sqrt()
-            
+                self.expression+= 'math.sqrt'
             
             
             else:
