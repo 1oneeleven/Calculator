@@ -7,7 +7,9 @@ import math
 
 class GUICalculator:
     def __init__(self,window):
-        self.number_input=""
+        
+        self.expression=""
+        self.number_input=tk.StringVar()
         
         
         self.window=window
@@ -15,7 +17,7 @@ class GUICalculator:
         self.window.geometry ("800x800")  #set calculator window size
     
     
-        self.entry = tk.Entry(self.window, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
+        self.entry = tk.Entry(self.window, textvariable=self.number_input, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
         self.entry.grid(row=0, column=0, columnspan=4)
     
     
@@ -37,9 +39,10 @@ class GUICalculator:
         
     
     def on_click(self, button_text):
-        self.number_input+=str(button_text)
-        self.entry.insert(self.number_input)
+        self.expression+=str(button_text)
         #add self.number_input to entry widget
+        
+        self.number_input.set(self.expression)
         
 """ if button_text== '=':
      #evaluate the expression in number_input eval
