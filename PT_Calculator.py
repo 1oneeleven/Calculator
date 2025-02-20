@@ -5,101 +5,122 @@ import tkinter as tk
 import math
 
 
-window = tk.Tk ()  #TK () method to initialise a main window
-window.title ("Calculator")  # set title
-window.geometry ("800x600")  #set calculator window size
-
-
-entry = tk.Entry(window, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
-entry.grid(row=0, column=0, columnspan=4)
-
-
-buttons = [
-    ['arcsin','arccos','arctan','√',]
-    ['Sin','Cos','Tan','^'],
-    ['7', '8', '9', '/'],
-    ['4', '5', '6', '*'],
-    ['1', '2', '3', '-'],
-    ['C', '0', '=', '+']
-]
-
-for i, row in enumerate(buttons):
-    for j, button_text in enumerate(row):
-        button = tk.Button(window, text=button_text, font=("Arial", 18), height=4, width=10,
-                           command=lambda button_text=button_text: on_click(button_text))
-        button.grid(row=i+1, column=j, padx=5, pady=5)
-number_input = 0
-
-
-def close_window():
-    
-    window.destroy()
-
-def delete():
-   global empty
-   empty = 0
-   number_input.set(empty)
-   
-def clear():
+class GUICalculator:
+    def __init__(self,window):
+        self.number_input=""
+        
+        
+        self.window=window
+        self.window.title ("Calculator")  # set title
+        self.window.geometry ("800x800")  #set calculator window size
     
     
-   
-def addition(): 
-
+        self.entry = tk.Entry(self.window, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
+        self.entry.grid(row=0, column=0, columnspan=4)
     
-    return
+    
+        self.buttons = [
+            ['arcsin','arccos','arctan','√',],
+            ['Sin','Cos','Tan','^'],
+            ['7', '8', '9', '/'],
+            ['4', '5', '6', '*'],
+            ['1', '2', '3', '-'],
+            ['C', '0', '=', '+']
+        ]
+        
+        for i, row in enumerate(self.buttons):
+            for j, button_text in enumerate(row):
+                self.button = tk.Button(self.window, text=button_text, font=("Arial", 18), height=4, width=10, command=lambda button_text=button_text: self.on_click(button_text)) 
+                                
+                self.button.grid(row=i+1, column=j, padx=5, pady=5)
+    
+        
+    
+    def on_click(self, button_text):
+        self.number_input+=str(button_text)
+        self.entry.insert(self.number_input)
+        #add self.number_input to entry widget
+        
+""" if button_text== '=':
+     #evaluate the expression in number_input eval
+     
+ if button_text=='C':
+     #call self.delete
+ 
+ if button_text in ['sin', 'cos', 'tan']:
+     # use math.sin etc
+        
+    
+    def close_window():
+        
+        window.destroy()
+       
+       
+    def clear(self):
+        empty = 0
+        number_input.set(empty)
+        
+        return
+        
+       
+    def addition(self): 
+    
+        
+        return
+        
+    
+    def subtraction(self):
+        
+        return
+    
+    def multiply(self):
+        
+        return
+    
+    def divide(self):
+        
+        return
+    
+    #_____________________________________
+    
+    def square(self): 
+        
+        return
+    
+    def sqrroot(self):
+        
+        return 
+    
+    #_____________________________________
+    
+    def sine(self):
+        
+        return
+    
+    def cosine(self):
+        
+        return
+    
+    def tangent(self):
+        
+        return
+    
+    #_____________________________________
+    
+    def arcsine(self):
+        
+        return
+    
+    def arccos(self):
+        
+        return
+    
+    def arctan(self):
+        
+        return
     
 
-def subtraction():
-    
-    return
-
-def multiply():
-    
-    return
-
-def divide():
-    
-    return
-
-#_____________________________________
-
-def square(): 
-    
-    return
-
-def sqrroot():
-    
-    return 
-
-#_____________________________________
-
-def sine():
-    
-    return
-
-def cosine():
-    
-    return
-
-def tangent():
-    
-    return
-
-#_____________________________________
-
-def arcsine():
-    
-    return
-
-def arccos():
-    
-    return
-
-def arctan():
-    
-    return
-
-
-
+"""
+window=tk.Tk()
+calculator=GUICalculator(window)
 window.mainloop()
