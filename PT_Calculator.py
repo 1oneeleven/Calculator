@@ -14,7 +14,7 @@ class GUICalculator:
         
         self.window=window
         self.window.title ("Calculator")  # set title
-        self.window.geometry ("800x800")  #set calculator window size
+        self.window.geometry ("1000x800")  #set calculator window size
     
     
         self.entry = tk.Entry(self.window, textvariable=self.number_input, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
@@ -22,12 +22,12 @@ class GUICalculator:
     
     
         self.buttons = [
-            ['arcsin','arccos','arctan','√','(',')'],
-            ['Sin','Cos','Tan','**2'],
+            ['arcsin','arccos','arctan','√','C'],
+            ['Sin','Cos','Tan','**2','='],
             ['7', '8', '9', '/'],
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
-            ['C', '0', '=', '+']
+            ['(', ')', '0', '+']
         ]
         
         for i, row in enumerate(self.buttons):
@@ -54,7 +54,7 @@ class GUICalculator:
                 # use math.sin etc
                 self.expression+='math.sin'
                 
-            elif button_text == 'cos'
+            elif button_text == 'cos':
                 self.expression+=math.cos()
              
             elif button_text == 'tan':
