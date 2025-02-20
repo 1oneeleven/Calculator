@@ -22,8 +22,8 @@ class GUICalculator:
     
     
         self.buttons = [
-            ['arcsin','arccos','arctan','√',],
-            ['Sin','Cos','Tan','^'],
+            ['arcsin','arccos','arctan','√','(',')'],
+            ['Sin','Cos','Tan','**2'],
             ['7', '8', '9', '/'],
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
@@ -39,26 +39,53 @@ class GUICalculator:
         
     
     def on_click(self, button_text):
-        self.expression+=str(button_text)
         #add self.number_input to entry widget
-        
-        self.number_input.set(self.expression)
-        
-""" if button_text== '=':
-     #evaluate the expression in number_input eval
+        try:
+            if button_text== '=':
+                #evaluate the expression in number_input eval
+                self.expression=eval(self.expression)
+         
+            #if statemetn to clear entry when "C" is pressed 
+            elif button_text=='C':
+                empty = ""
+                self.expression.set(empty)
      
- if button_text=='C':
-     #call self.delete
- 
- if button_text in ['sin', 'cos', 'tan']:
-     # use math.sin etc
-        
+            elif button_text == 'sin':
+                # use math.sin etc
+                self.expression+='math.sin'
+                
+            elif button_text == 'cos'
+                self.expression+=math.cos()
+             
+            elif button_text == 'tan':
+                self.expression+=math.tan()
     
-    def close_window():
-        
-        window.destroy()
-       
-       
+            elif button_text == 'arcsin': 
+                self.expression+=math.arcsin()
+                
+            elif button_text == 'arccos':
+                self.expression+=math.arccos()
+                
+            elif button_text == 'arctan':
+                self.expression+=math.arctan()
+           
+            elif button_text == '√':
+                self.expression+=math.sqrt()
+            
+            
+            
+            else:
+                self.expression+=str(button_text)
+                
+            
+        except:
+            error = "error"
+            self.expression.set(error)
+            
+        self.number_input.set(self.expression)
+    
+"""       
+           
     def clear(self):
         empty = 0
         number_input.set(empty)
