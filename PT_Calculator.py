@@ -22,12 +22,13 @@ class GUICalculator:
     
     
         self.buttons = [
-            ['arcsin','arccos','arctan','√','C'],
-            ['Sin','Cos','Tan','**2','='],
+            ['arcsin','arccos','arctan','√'],
+            ['Sin','Cos','Tan','**2'],
             ['7', '8', '9', '/'],
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
-            ['(', ')', '0', '+']
+            ['(', ')', '0', '+'],
+            ['C','=']
         ]
         
         for i, row in enumerate(self.buttons):
