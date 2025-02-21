@@ -35,9 +35,9 @@ class GUICalculator:
         for i, row in enumerate(self.buttons):
             for j, button_text in enumerate(row):
                 self.button = tk.Button(self.window, text=button_text, font=("Arial", 18), height=4, width=10, command=lambda button_text=button_text: self.on_click(button_text)) 
-                                
+                                #The size of the window and the textbox the font
                 self.button.grid(row=i+1, column=j, padx=5, pady=4)
-    
+                # Create buttons and add them to the grid
         
     
     def on_click(self, button_text):
