@@ -29,8 +29,8 @@ class GUICalculator:
             ['7', '8', '9', '/'],
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
-            ['(', ')', '0', '+'],
-            ['C','=','.']
+            ['0', '.', 'Clear', '+'],
+            ['(',')','=']
         ]
         #create a button for each button and put it in the grid
         for i, row in enumerate(self.buttons):
@@ -50,7 +50,7 @@ class GUICalculator:
                 self.expression=eval(self.expression)
          
             #if statemetn to clear entry when "C" is pressed    
-            elif button_text=='C':
+            elif button_text=='Clear':
                 self.expression = ""
      
             elif button_text == 'Sin':
