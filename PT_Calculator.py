@@ -17,11 +17,12 @@ class GUICalculator:
         self.window.title ("Calculator")  # set title
         self.window.geometry ("800x1000")  #set calculator window size
     
-    
+        # Create an input box to display the calculation result or input content
         self.entry = tk.Entry(self.window, textvariable=self.number_input, font=("Arial", 24), bd=20, relief="groove", justify="right", width=54)
+        # Place the input box into the window's grid
         self.entry.grid(row=0, column=0, columnspan=4)
     
-    
+    #Button layout, a martix represents the buttons in each row
         self.buttons = [
             ['arcsin','arccos','arctan','√'],
             ['Sin','Cos','Tan','**2'],
@@ -31,13 +32,14 @@ class GUICalculator:
             ['(', ')', '0', '+'],
             ['C','=','.']
         ]
-        
+        #create a button for each button and put it in the grid
         for i, row in enumerate(self.buttons):
+            # Create buttons and bind click events to each button
             for j, button_text in enumerate(row):
                 self.button = tk.Button(self.window, text=button_text, font=("Arial", 18), height=4, width=10, command=lambda button_text=button_text: self.on_click(button_text)) 
                                 #The size of the window and the textbox the font
                 self.button.grid(row=i+1, column=j, padx=5, pady=4)
-                # Create buttons and add them to the grid
+                
         
     
     def on_click(self, button_text):
