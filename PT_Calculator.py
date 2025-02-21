@@ -3,6 +3,7 @@
 
 import tkinter as tk
 import math
+from math import sin, cos, tan, asin, acos, atan, sqrt
 
 
 class GUICalculator:
@@ -28,7 +29,7 @@ class GUICalculator:
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
             ['(', ')', '0', '+'],
-            ['C','=']
+            ['C','=','.']
         ]
         
         for i, row in enumerate(self.buttons):
@@ -46,32 +47,35 @@ class GUICalculator:
                 #evaluate the expression in number_input eval
                 self.expression=eval(self.expression)
          
-            #if statemetn to clear entry when "C" is pressed 
+            #if statemetn to clear entry when "C" is pressed    
             elif button_text=='C':
-                empty = ""
-                self.expression.set(empty)
+                self.expression = ""
      
-            elif button_text == 'sin':
-                # use math.sin etc
-                self.expression+='math.sin'
+            elif button_text == 'Sin':
                 
-            elif button_text == 'cos':
-                self.expression+= 'math.cos'
+                
+                self.expression+='sin'
+                
+            elif button_text == 'Cos':
+                self.expression+= 'cos'
              
-            elif button_text == 'tan':
-                self.expression+= 'math.tan'
+            elif button_text == 'Tan':
+                self.expression+= 'tan'
     
             elif button_text == 'arcsin': 
-                self.expression+= 'math.arcsin'
+                self.expression+= 'asin'
+                
                 
             elif button_text == 'arccos':
-                self.expression+= 'math.arccos'
+                self.expression+= 'acos'
+                
                 
             elif button_text == 'arctan':
-                self.expression+= 'math.arctan'
+                self.expression+= 'tan'
+                
            
             elif button_text == '√':
-                self.expression+= 'math.sqrt'
+                self.expression+= 'sqrt'
             
             
             else:
@@ -79,78 +83,12 @@ class GUICalculator:
                 
             
         except:
-            error = "error"
-            self.expression.set(error)
+            
+            self.expression = "error"
             
         self.number_input.set(self.expression)
     
-"""       
-           
-    def clear(self):
-        empty = 0
-        number_input.set(empty)
-        
-        return
-        
-       
-    def addition(self): 
-    
-        
-        return
-        
-    
-    def subtraction(self):
-        
-        return
-    
-    def multiply(self):
-        
-        return
-    
-    def divide(self):
-        
-        return
-    
-    #_____________________________________
-    
-    def square(self): 
-        
-        return
-    
-    def sqrroot(self):
-        
-        return 
-    
-    #_____________________________________
-    
-    def sine(self):
-        
-        return
-    
-    def cosine(self):
-        
-        return
-    
-    def tangent(self):
-        
-        return
-    
-    #_____________________________________
-    
-    def arcsine(self):
-        
-        return
-    
-    def arccos(self):
-        
-        return
-    
-    def arctan(self):
-        
-        return
-    
 
-"""
 window=tk.Tk()
 calculator=GUICalculator(window)
 window.mainloop()
